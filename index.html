@@ -9,7 +9,7 @@
     <script defer src="face-api.min.js"></script>
     <script defer src="script.js"></script>
     <style>
-        body {
+        #videoContainer {
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -23,19 +23,34 @@
             position: absolute;
         }
 
-        video{
-            opacity: 0;
+        video {
+            opacity: 1;
             object-fit: contain;
-            max-width: 100%;
+            /* max-width: 100%;
             max-height: 100%;
             width: auto;
-            height: auto;
+            height: auto; */
         }
     </style>
 </head>
 
 <body>
-    <video id="video" width="1440" height="1120" autoplay muted></video>
+    <div class="elementContainer">
+        <form id="inputForm" onsubmit="return false">
+            Name:<br>
+            <input type="text" id="name"><br>
+            Url:<br>
+            <input type="text" id="url"><br>
+            <button onclick="processForm()">Add URL</button><br>
+            <button onclick="reloadImages()">Refresh</button>
+
+        </form>
+        <h1 id="status">Ready. Enter a name and URL profile picture and click add</h1>
+    </div>
+    <div id="videoContainer">
+
+        <video id="video" width="720" height="560" autoplay muted></video>
+    </div>
 </body>
 
 </html>

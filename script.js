@@ -1,5 +1,15 @@
 const video = document.getElementById("video");
 
+// const labeled = {
+//     Kenneth: [
+//       "https://i.ibb.co/fGs7Wyj/Screenshot-2020-01-20-at-23-46-15.png",
+//       "https://i.ibb.co/0DY15V7/IMG-8453.jpg"
+//     ],
+//     Maurits: [
+//         "https://i.ibb.co/yB3G2Xk/Screenshot-2020-01-20-at-23-53-18.png"
+//     ]
+//   };
+
 const labeled = {};
 
 function processForm() {
@@ -25,11 +35,11 @@ function reloadImages() {
 }
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri("/models"),
-  faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
-  faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
-  faceapi.nets.faceExpressionNet.loadFromUri("/models"),
-  faceapi.nets.ssdMobilenetv1.loadFromUri("/models")
+  faceapi.nets.tinyFaceDetector.loadFromUri("./models"),
+  faceapi.nets.faceLandmark68Net.loadFromUri("./models"),
+  faceapi.nets.faceRecognitionNet.loadFromUri("./models"),
+  faceapi.nets.faceExpressionNet.loadFromUri("./models"),
+  faceapi.nets.ssdMobilenetv1.loadFromUri("./models")
 ]).then(startVideo);
 
 function startVideo() {
